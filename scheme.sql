@@ -8,10 +8,3 @@ CREATE TABLE users (
     gender VARCHAR(100),
     joined TIMESTAMP
 );
-
-CREATE TABLE login (
-    uid SERIAL PRIMARY KEY NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    hash_password TEXT NOT NULL
-
-);
