@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 
 
 const register = require('./controllers/register');
+const signin = require('./controllers/signin');
+
 const db = knex({
     client: 'pg',
     connection: {
@@ -31,7 +33,7 @@ app.post('/register', (req, res ) => register.handelRegister(req, res,db, bcrypt
 
 
 app.post('/signin', (req, res) => {
-    
+    signin.handleSignin(req, res, db, bcrypt);
 })
     
 

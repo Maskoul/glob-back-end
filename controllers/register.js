@@ -1,3 +1,5 @@
+
+
 const handelRegister = (req , res, db, bcrypt) => {
     const {firstName, lastName, email, password, birthDay, gender} = req.body;
     if(!firstName || !lastName || !email || !password|| !birthDay){
