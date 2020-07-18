@@ -17,7 +17,7 @@ const handelRegister = (req , res, db, bcrypt) => {
             gender: gender,
             joined: new Date()
         })    
-            .returning(['first_name', 'last_name', 'email', 'birth_day', 'gender', 'joined'])
+            .returning(['uid','first_name', 'last_name', 'email', 'birth_day', 'gender', 'joined'])
             .then(user => res.json(user[0]))
             .catch(err => {
                 console.log(err);

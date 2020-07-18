@@ -1,6 +1,7 @@
 const express = require('express');
 const knex = require('knex');
 const bcrypt = require('bcrypt');
+const cors = require('cors')
 
 
 const register = require('./controllers/register');
@@ -21,6 +22,7 @@ const app = express();
 
 const port = 3000;
 
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
