@@ -8,3 +8,13 @@ CREATE TABLE users (
     gender VARCHAR(100),
     joined TIMESTAMP
 );
+
+CREATE TABLE articles(
+    pid SERIAL PRIMARY KEY NOT NULL,
+    title TEXT NOT NULL,
+    sub_title VARCHAR(255) NOT NULL,
+    article VARCHAR,
+    user_id INT REFERENCES users(uid),
+    author VARCHAR (255) NOT NULL,
+    date_created TIMESTAMP
+);

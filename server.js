@@ -6,6 +6,7 @@ const cors = require('cors')
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
+const newPost = require('./controllers/newPost');
 
 const db = knex({
     client: 'pg',
@@ -37,6 +38,9 @@ app.post('/register', (req, res ) => register.handelRegister(req, res,db, bcrypt
 app.post('/signin', (req, res) => {
     signin.handleSignin(req, res, db, bcrypt);
 })
-    
+
+app.post('/newpost', (req, res) => {
+    newPost.handleNewPost(req, res, db, bcrypt);
+})
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
