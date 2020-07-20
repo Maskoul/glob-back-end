@@ -1,6 +1,5 @@
-const { json } = require("express");
 
-const handleNewPost = (req, res, db, bcrypt) => {
+const handleNewArticle = (req, res, db, bcrypt) => {
 
     const {title, subTitle, article, userId, author} = req.body;
 
@@ -22,6 +21,6 @@ const handleNewPost = (req, res, db, bcrypt) => {
 }
 
 module.exports = {
-    handleNewPost : handleNewPost
+    handleNewArticle : handleNewArticle
 }
 
